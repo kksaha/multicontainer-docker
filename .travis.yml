@@ -9,14 +9,14 @@ script:
   - docker run kks/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t kks/multi-client ./client
-  - docker build -t kks/multi-nginx ./nginx
-  - docker build -t kks/multi-server ./server
-  - docker build -t kks/multi-worker ./worker
+  - docker build -t kksaha007/multi-client ./client
+  - docker build -t kksaha007/multi-nginx ./nginx
+  - docker build -t kksaha007/multi-server ./server
+  - docker build -t kksaha007/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push kks/multi-client
-  - docker push kks/multi-nginx
-  - docker push kks/multi-server
-  - docker push kks/multi-worker
+  - docker push kksaha007/multi-client
+  - docker push kksaha007/multi-nginx
+  - docker push kksaha007/multi-server
+  - docker push kksaha007/multi-worker
