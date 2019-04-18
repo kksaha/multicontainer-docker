@@ -1,6 +1,6 @@
-sudo:required
+sudo: required
 services:
-  -docker
+  - docker
 
 before_install:
   - docker build -t kks/react-test -f ./client/Dockerfile.dev ./client
@@ -15,7 +15,7 @@ after_success:
   - docker build -t kks/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  # Take those images nd push them to docker hub
+  # Take those images and push them to docker hub
   - docker push kks/multi-client
   - docker push kks/multi-nginx
   - docker push kks/multi-server
