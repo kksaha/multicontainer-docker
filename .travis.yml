@@ -20,4 +20,3 @@ after_success:
   - docker push kks/multi-nginx
   - docker push kks/multi-server
   - docker push kks/multi-worker
-
