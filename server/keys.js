@@ -7,4 +7,3 @@ module.exports = {
   pgPassword: process.env.PGPASSWORD,
   pgPort: process.env.PGPORT
 };
-
